@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Intencions</string>
+    <string name="intencions_implicites">Intencions implicites</string>
+    <string name="obrir_pagina_web">OBRIR PAGINA WEB</string>
+    <string name="cridada_de_tel_fon">CRIDADA DE TELÈFON</string>
+    <string name="google_maps">GOOGLE MAPS</string>
+    <string name="fer_foto">FER FOTO</string>
+    <string name="enviar_correu">ENVIAR CORREU</string>
+</resources>

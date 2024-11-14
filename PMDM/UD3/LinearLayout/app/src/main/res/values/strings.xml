@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LinearLayout</string>
+    <string name="per_a">Per a</string>
+    <string name="enviar">Enviar</string>
+    <string name="assumpte">Assumpte</string>
+    <string name="missatge">Missatge</string>
+    <string name="enviar_email">Enviar email</string>
+    <string name="Enviar">ENVIAR</string>
+    <string name="linear_layout">Linear Layout</string>
+</resources>

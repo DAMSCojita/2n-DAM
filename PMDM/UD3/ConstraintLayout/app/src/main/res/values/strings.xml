@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ConstraintLayout</string>
+    <string name="registre_d_usuaris">Registre d\'usuaris</string>
+    <string name="enviar">ENVIAR</string>
+</resources>

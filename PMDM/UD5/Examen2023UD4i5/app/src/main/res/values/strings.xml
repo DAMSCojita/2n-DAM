@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Examen2023UD4i5</string>
+    <string name="examen_unitats_4_i_5">Examen Unitats 4 i 5</string>
+    <string name="animaci">ANIMACIÓ</string>
+    <string name="temps_animaci_0">Temps animació:</string>
+    <string name="vector">VECTOR</string>
+    <string name="n_mero_execucions_0">Número execucions:</string>
+    <string name="mapa">MAPA</string>
+    <string name="prefer_ncies">Preferències</string>
+    <string name="n_mero_execucions_2">Número execucions:</string>
+    <string name="comen_ar_animacio">COMENÇAR ANIMACIO</string>
+    <string name="aturar_animacio">ATURAR ANIMACIO</string>
+    <string name="sortir">SORTIR</string>
+</resources>

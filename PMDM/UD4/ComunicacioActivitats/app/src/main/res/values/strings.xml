@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ComunicacioActivitats</string>
+    <string name="comunicacioambretorn">ComunicacioAmbRetorn</string>
+    <string name="nom">Nom:</string>
+    <string name="el_teu_nom">El teu nom</string>
+    <string name="verificar">VERIFICAR</string>
+    <string name="resultat">Resultat:</string>
+    <string name="rebutjar">REBUTJAR</string>
+    <string name="acceptar">ACCEPTAR</string>
+</resources>
