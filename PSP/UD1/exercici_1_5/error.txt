@@ -1,0 +1,2 @@
+Error: Could not find or load main class LeerNombre
+Caused by: java.lang.NoClassDefFoundError: exercici_1_4/LeerNombre (wrong name: LeerNombre)
