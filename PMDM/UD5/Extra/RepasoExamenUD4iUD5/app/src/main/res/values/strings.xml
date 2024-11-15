@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RepasoExamenUD4iUD5</string>
+    <string name="repaso_examen_ud4_y_ud5">Repaso Examen UD4 y UD5</string>
+    <string name="animaci_n">ANIMACIÓN</string>
+    <string name="n_mero_segundos">Número segundos:</string>
+    <string name="vector">VECTOR</string>
+    <string name="n_mero_ejecuciones">Número ejecuciones:</string>
+    <string name="intenciones">INTENCIONES</string>
+    <string name="n_mero_ejecuciones_2">Número ejecuciones:</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="b_sicas">Básicas</string>
+    <string name="animaciones">Animaciones</string>
+    <string name="hola">Hola</string>
+    <string name="salir">SALIR</string>
+    <string name="dibujo">DIBUJO</string>
+    <string name="gr_ficos">GRÁFICOS</string>
+</resources>
