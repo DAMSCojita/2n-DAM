@@ -1,0 +1,419 @@
+﻿namespace RentalCarDefinitiu
+{
+    partial class MenuPrincipal
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblTitolRentalCar = new System.Windows.Forms.Label();
+            this.btnRestaura = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnMaximizar = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.pnlMenuVertical = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVehiculos = new System.Windows.Forms.Button();
+            this.btnReservas = new System.Windows.Forms.Button();
+            this.btnContratos = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnCargos = new System.Windows.Forms.Button();
+            this.picFavIcon = new System.Windows.Forms.PictureBox();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.pnlTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestaura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.pnlMenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFavIcon)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pnlTitulo
+            // 
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pnlTitulo.Controls.Add(this.lblTitolRentalCar);
+            this.pnlTitulo.Controls.Add(this.btnRestaura);
+            this.pnlTitulo.Controls.Add(this.btnMinimizar);
+            this.pnlTitulo.Controls.Add(this.btnMaximizar);
+            this.pnlTitulo.Controls.Add(this.btnCerrar);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(1300, 35);
+            this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseMove);
+            // 
+            // lblTitolRentalCar
+            // 
+            this.lblTitolRentalCar.AutoSize = true;
+            this.lblTitolRentalCar.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitolRentalCar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lblTitolRentalCar.Location = new System.Drawing.Point(11, 9);
+            this.lblTitolRentalCar.Name = "lblTitolRentalCar";
+            this.lblTitolRentalCar.Size = new System.Drawing.Size(79, 20);
+            this.lblTitolRentalCar.TabIndex = 4;
+            this.lblTitolRentalCar.Text = "RentalCar";
+            // 
+            // btnRestaura
+            // 
+            this.btnRestaura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaura.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaura.Image")));
+            this.btnRestaura.Location = new System.Drawing.Point(1137, 4);
+            this.btnRestaura.Name = "btnRestaura";
+            this.btnRestaura.Size = new System.Drawing.Size(35, 29);
+            this.btnRestaura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRestaura.TabIndex = 3;
+            this.btnRestaura.TabStop = false;
+            this.btnRestaura.Click += new System.EventHandler(this.btnRestaura_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(1178, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(33, 29);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
+            this.btnMaximizar.Location = new System.Drawing.Point(1217, 4);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(32, 28);
+            this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMaximizar.TabIndex = 1;
+            this.btnMaximizar.TabStop = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1255, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(33, 29);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // pnlMenuVertical
+            // 
+            this.pnlMenuVertical.BackColor = System.Drawing.Color.Black;
+            this.pnlMenuVertical.Controls.Add(this.btnSalir);
+            this.pnlMenuVertical.Controls.Add(this.pictureBox6);
+            this.pnlMenuVertical.Controls.Add(this.panel5);
+            this.pnlMenuVertical.Controls.Add(this.pictureBox5);
+            this.pnlMenuVertical.Controls.Add(this.panel4);
+            this.pnlMenuVertical.Controls.Add(this.pictureBox4);
+            this.pnlMenuVertical.Controls.Add(this.panel3);
+            this.pnlMenuVertical.Controls.Add(this.pictureBox3);
+            this.pnlMenuVertical.Controls.Add(this.panel2);
+            this.pnlMenuVertical.Controls.Add(this.pictureBox2);
+            this.pnlMenuVertical.Controls.Add(this.panel1);
+            this.pnlMenuVertical.Controls.Add(this.btnVehiculos);
+            this.pnlMenuVertical.Controls.Add(this.btnReservas);
+            this.pnlMenuVertical.Controls.Add(this.btnContratos);
+            this.pnlMenuVertical.Controls.Add(this.btnClientes);
+            this.pnlMenuVertical.Controls.Add(this.btnCargos);
+            this.pnlMenuVertical.Controls.Add(this.picFavIcon);
+            this.pnlMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenuVertical.Location = new System.Drawing.Point(0, 35);
+            this.pnlMenuVertical.Name = "pnlMenuVertical";
+            this.pnlMenuVertical.Size = new System.Drawing.Size(222, 615);
+            this.pnlMenuVertical.TabIndex = 1;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(0, 562);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(55, 53);
+            this.btnSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSalir.TabIndex = 16;
+            this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(21, 499);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(52, 33);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 15;
+            this.pictureBox6.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel5.Location = new System.Drawing.Point(4, 501);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 32);
+            this.panel5.TabIndex = 14;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(25, 436);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(49, 32);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 13;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel4.Location = new System.Drawing.Point(4, 436);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 32);
+            this.panel4.TabIndex = 12;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(24, 371);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(51, 34);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(4, 373);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 32);
+            this.panel3.TabIndex = 10;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(24, 311);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel2.Location = new System.Drawing.Point(4, 311);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 32);
+            this.panel2.TabIndex = 8;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(21, 251);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 31);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Location = new System.Drawing.Point(4, 251);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 32);
+            this.panel1.TabIndex = 6;
+            // 
+            // btnVehiculos
+            // 
+            this.btnVehiculos.FlatAppearance.BorderSize = 0;
+            this.btnVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehiculos.ForeColor = System.Drawing.Color.White;
+            this.btnVehiculos.Location = new System.Drawing.Point(12, 498);
+            this.btnVehiculos.Name = "btnVehiculos";
+            this.btnVehiculos.Size = new System.Drawing.Size(210, 35);
+            this.btnVehiculos.TabIndex = 5;
+            this.btnVehiculos.Text = "Vehículos";
+            this.btnVehiculos.UseVisualStyleBackColor = true;
+            this.btnVehiculos.Click += new System.EventHandler(this.btnVehiculos_Click);
+            // 
+            // btnReservas
+            // 
+            this.btnReservas.FlatAppearance.BorderSize = 0;
+            this.btnReservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReservas.ForeColor = System.Drawing.Color.White;
+            this.btnReservas.Location = new System.Drawing.Point(15, 436);
+            this.btnReservas.Name = "btnReservas";
+            this.btnReservas.Size = new System.Drawing.Size(207, 32);
+            this.btnReservas.TabIndex = 4;
+            this.btnReservas.Text = "Reservas";
+            this.btnReservas.UseVisualStyleBackColor = true;
+            this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
+            // 
+            // btnContratos
+            // 
+            this.btnContratos.FlatAppearance.BorderSize = 0;
+            this.btnContratos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContratos.ForeColor = System.Drawing.Color.White;
+            this.btnContratos.Location = new System.Drawing.Point(7, 371);
+            this.btnContratos.Name = "btnContratos";
+            this.btnContratos.Size = new System.Drawing.Size(219, 32);
+            this.btnContratos.TabIndex = 3;
+            this.btnContratos.Text = "Contratos";
+            this.btnContratos.UseVisualStyleBackColor = true;
+            this.btnContratos.Click += new System.EventHandler(this.btnContratos_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.ForeColor = System.Drawing.Color.White;
+            this.btnClientes.Location = new System.Drawing.Point(7, 311);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(212, 32);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnCargos
+            // 
+            this.btnCargos.BackColor = System.Drawing.Color.Black;
+            this.btnCargos.FlatAppearance.BorderSize = 0;
+            this.btnCargos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnCargos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargos.ForeColor = System.Drawing.Color.White;
+            this.btnCargos.Location = new System.Drawing.Point(0, 251);
+            this.btnCargos.Name = "btnCargos";
+            this.btnCargos.Size = new System.Drawing.Size(219, 32);
+            this.btnCargos.TabIndex = 1;
+            this.btnCargos.Text = "Cargos";
+            this.btnCargos.UseVisualStyleBackColor = false;
+            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
+            // 
+            // picFavIcon
+            // 
+            this.picFavIcon.Image = ((System.Drawing.Image)(resources.GetObject("picFavIcon.Image")));
+            this.picFavIcon.Location = new System.Drawing.Point(-16, 0);
+            this.picFavIcon.Name = "picFavIcon";
+            this.picFavIcon.Size = new System.Drawing.Size(253, 221);
+            this.picFavIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFavIcon.TabIndex = 0;
+            this.picFavIcon.TabStop = false;
+            // 
+            // pnlPrincipal
+            // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPrincipal.Location = new System.Drawing.Point(222, 35);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(1078, 615);
+            this.pnlPrincipal.TabIndex = 2;
+            // 
+            // MenuPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.Controls.Add(this.pnlPrincipal);
+            this.Controls.Add(this.pnlMenuVertical);
+            this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "MenuPrincipal";
+            this.Text = "FormMenuPrincipal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
+            this.pnlTitulo.ResumeLayout(false);
+            this.pnlTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestaura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            this.pnlMenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFavIcon)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlTitulo;
+        private System.Windows.Forms.Panel pnlMenuVertical;
+        private System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.PictureBox btnMaximizar;
+        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.PictureBox btnRestaura;
+        private System.Windows.Forms.PictureBox picFavIcon;
+        private System.Windows.Forms.Button btnCargos;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btnContratos;
+        private System.Windows.Forms.Button btnReservas;
+        private System.Windows.Forms.Button btnVehiculos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblTitolRentalCar;
+        private System.Windows.Forms.PictureBox btnSalir;
+    }
+}

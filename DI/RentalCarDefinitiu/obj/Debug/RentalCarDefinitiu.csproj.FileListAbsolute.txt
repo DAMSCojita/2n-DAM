@@ -1,0 +1,16 @@
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.csproj.AssemblyReference.cache
+C:\Users\steft\source\repos\RentalCarDefinitiu\bin\Debug\RentalCarDefinitiu.exe.config
+C:\Users\steft\source\repos\RentalCarDefinitiu\bin\Debug\RentalCarDefinitiu.exe
+C:\Users\steft\source\repos\RentalCarDefinitiu\bin\Debug\RentalCarDefinitiu.pdb
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.FormCargos.resources
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.FormClientes.resources
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.FormContratos.resources
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.FormReservas.resources
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.Properties.Resources.resources
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.csproj.GenerateResource.cache
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.csproj.CoreCompileInputs.cache
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.exe
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.pdb
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.FormVehiculos.resources
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.InicioSesion.resources
+C:\Users\steft\source\repos\RentalCarDefinitiu\obj\Debug\RentalCarDefinitiu.MenuPrincipal.resources

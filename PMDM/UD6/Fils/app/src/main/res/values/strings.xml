@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Fils</string>
+    <string name="copia_de_seguretatasynctask">Copia de seguretatAsyncTask</string>
+    <string name="nom_del_fitxer_a_copiar">Nom del fitxer a copiar</string>
+    <string name="realitzar_c_pia">REALITZAR CÒPIA</string>
+</resources>
