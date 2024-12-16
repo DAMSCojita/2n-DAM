@@ -27,20 +27,21 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Declaració de variables necessàries.
     TextView txtTitol;
     Button buttonJugar;
     Button buttonConfigurar;
     Button buttonSobre;
     Button buttonPuntuacions;
-    MediaPlayer mp;
-
     public static ScoreStorage scoreStorage = new ScoreStorageList();
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        // Definim buttons.
         buttonJugar = findViewById(R.id.btnJugar);
         buttonJugar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Definim les animacions.
         txtTitol = findViewById(R.id.txtTitol);
         Animation animacioTitol = AnimationUtils.loadAnimation(this, R.anim.gir_amb_zoom);
         txtTitol.startAnimation(animacioTitol);
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 //            return insets;
 //        });
 
-        mp = MediaPlayer.create(this, R.raw.audio);
+        mp = MediaPlayer.create(this, R.raw.audio); // Afegim aquí el MediaPlayer que contindrà l'àudio de fons.
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -172,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        mp.pause();
+        mp.pause(); // Pausam sa música quan entrem al 'onPause()'.
     }
 
     @Override
@@ -180,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         if (pref.getBoolean("musica", true)) {
-            mp.start();
+            mp.start(); // Retornam sa música quan entrem al 'onResume()'.
         }
     }
 

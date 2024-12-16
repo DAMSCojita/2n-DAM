@@ -45,12 +45,9 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         if (gameView != null) {
-            // Comprova que gameView no és nul abans de continuar.
-            gameView.getThread().halt();
-            // Atura completament el fil del joc, alliberant recursos.
+            gameView.getThread().halt(); // Aturem completament el fil del joc, alliberant recursos.
         }
         super.onDestroy();
-        // Crida al mètode de la superclasse per gestionar la destrucció de l'activitat.
     }
 
 }
