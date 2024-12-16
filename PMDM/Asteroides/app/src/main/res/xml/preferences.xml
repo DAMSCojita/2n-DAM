@@ -19,6 +19,12 @@
         android:summary="En quants trossos es divideix un asteroide"
         android:inputType="number"
         android:defaultValue="3"/>
+    <ListPreference
+        android:key="sensors"
+        android:title="Sensor"
+        android:summary="Escollir el sensor per jugar"
+        android:entries="@array/tipusControls"
+        android:entryValues="@array/tipusControlsValors"/>
     <PreferenceCategory android:title="Mode multijugador">
         <CheckBoxPreference
             android:title="Activar multijugador"/>

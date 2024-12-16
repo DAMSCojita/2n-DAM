@@ -15,23 +15,19 @@ public class PreferencesActivity extends PreferenceActivity {
         fragments.setOnPreferenceChangeListener(
                 new Preference.OnPreferenceChangeListener() {
                     @Override
-                    public boolean onPreferenceChange(Preference
-                                                              preference, Object newValue) {
+                    public boolean onPreferenceChange(Preference preference, Object newValue) {
                         int valor;
                         try {
                             valor = Integer.parseInt((String)newValue);
                         } catch(Exception e) {
-                            Toast.makeText(getApplicationContext(), "Ha de ser un número",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Ha de ser un número", Toast.LENGTH_SHORT).show();
                             return false;
                         }
                         if (valor>=0 && valor<=9) {
-                            fragments.setSummary(
-                                    "En quants trossos es divideix un asteroide ("+valor+")");
+                            fragments.setSummary("En quants trossos es divideix un asteroide ("+valor+")");
                             return true;
                         } else {
-                            Toast.makeText(getApplicationContext(), "Màxim de fragments 9",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Màxim de fragments 9", Toast.LENGTH_SHORT).show();
                             return false;
                         }
                     }

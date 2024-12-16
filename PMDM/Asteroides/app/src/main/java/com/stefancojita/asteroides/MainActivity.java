@@ -1,7 +1,13 @@
 package com.stefancojita.asteroides;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +23,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView txtTitol;
@@ -24,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonConfigurar;
     Button buttonSobre;
     Button buttonPuntuacions;
+    MediaPlayer mp;
 
     public static ScoreStorage scoreStorage = new ScoreStorageList();
 
@@ -83,11 +92,13 @@ public class MainActivity extends AppCompatActivity {
         Animation animacioQuart = AnimationUtils.loadAnimation(this, R.anim.animacioquartboto);
         buttonPuntuacions.startAnimation(animacioQuart);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
+
+        mp = MediaPlayer.create(this, R.raw.audio);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -97,17 +108,41 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id==R.id.preferences){
+        if (id==R.id.preferences) {
             // arrancar activitat preferències
             arrancarActivityPreferences(null);
             return true;
         }
-        if (id == R.id.about){
+        if (id == R.id.about) {
             // arrancar activitat sobre...
             arrancarActivitySobre(null);
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Cridam a la superclase
+        super.onSaveInstanceState(savedInstanceState);
+        // Comprovem si el reproductor d'àudio (mp) no és nul
+        if (mp != null) {
+            int pos = mp.getCurrentPosition();
+            savedInstanceState.putInt("audio_position", pos); // Guardem la posició
+        }
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Cridam a la superclase
+        super.onRestoreInstanceState(savedInstanceState);
+        // Comprovem si l'estat de l'instància conté la clau "audio_position".
+        if (savedInstanceState.containsKey("audio_position")) {
+            int pos = savedInstanceState.getInt("audio_position");
+            // Comprovem si el reproductor d'àudio (mp) no és nul
+            if (mp != null) {
+                mp.seekTo(pos); // Seguir reproduïnt des de la posició pos
+            }
+        }
     }
 
     public void arrancarActivityJugar(View view) {
@@ -130,8 +165,23 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void arrancarSortida(View view) {
-        finish();
+//    public void arrancarSortida(View view) {
+//        finish();
+//    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mp.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        if (pref.getBoolean("musica", true)) {
+            mp.start();
+        }
     }
 
 }

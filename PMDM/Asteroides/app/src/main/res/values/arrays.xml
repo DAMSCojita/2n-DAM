@@ -10,6 +10,16 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    <string-array name="tipusControls">
+        <item>Teclat</item>
+        <item>Tàctil</item>
+        <item>Sensor</item>
+    </string-array>
+    <string-array name="tipusControlsValors">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
     <string-array name="tipusConnexio">
         <item>Bluetooth</item>
         <item>Wi-Fi</item>
