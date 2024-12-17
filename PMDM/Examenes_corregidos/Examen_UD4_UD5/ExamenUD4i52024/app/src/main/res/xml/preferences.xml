@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:key="nom_usuari"
+        android:title="Nom d'Usuari"
+        android:summary="Introdueix el teu nom d'usuari"
+        android:defaultValue="Usuari" />
+
+    <SwitchPreference
+        android:key="notificacions"
+        android:title="Activar notificacions"
+        android:summary="Activa o desactiva les notificacions" />
+
+    <!-- Nova preferència per seleccionar el color de fons -->
+    <ListPreference
+        android:key="color_fons_animacio"
+        android:title="Color de fons de l'animació"
+        android:summary="Tria el color de fons per a l'animació"
+        android:entries="@array/color_fons_opcions"
+        android:entryValues="@array/color_fons_valors"
+        android:defaultValue="blanc" />
+
+</PreferenceScreen>
+
+
+

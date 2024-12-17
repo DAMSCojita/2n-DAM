@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Examen Unitats 4 i 5</string>
+    <!-- Opcions de color per al fons de l'animació -->
+    <string-array name="color_fons_opcions">
+        <item>Blanc</item>
+        <item>Negre</item>
+    </string-array>
+    <string-array name="color_fons_valors">
+        <item>blanc</item>
+        <item>negre</item>
+    </string-array>
+</resources>
