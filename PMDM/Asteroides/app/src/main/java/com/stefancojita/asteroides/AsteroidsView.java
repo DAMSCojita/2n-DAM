@@ -65,9 +65,11 @@ public class AsteroidsView extends View implements SensorEventListener {
     SoundPool soundPool;
     int idFire, idExplosion;
 
+    private Drawable drawableAsteroid[]= new Drawable[3]; // Afegim es nou drawableAsteroid.
+
     public AsteroidsView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Drawable drawableShip, drawableAsteroid;
+        Drawable drawableShip;
         pref = PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getContext());
         soundPool = new SoundPool( 10, AudioManager.STREAM_MUSIC , 0);
@@ -88,12 +90,16 @@ public class AsteroidsView extends View implements SensorEventListener {
             pathAsteroid.lineTo((float) 0.0, (float) 0.6);
             pathAsteroid.lineTo((float) 0.0, (float) 0.2);
             pathAsteroid.lineTo((float) 0.3, (float) 0.0);
-            ShapeDrawable dAsteroid = new ShapeDrawable(new PathShape(pathAsteroid, 1, 1));
-            dAsteroid.getPaint().setColor(Color.WHITE);
-            dAsteroid.getPaint().setStyle(Paint.Style.STROKE);
-            dAsteroid.setIntrinsicWidth(50);
-            dAsteroid.setIntrinsicHeight(50);
-            drawableAsteroid = dAsteroid;
+            // Cas que volguem treballar amb gràfics vectorials després de canviar el drawableAsteroid.
+            // Al ser un array ara recorrem per a cada posició.
+            for (int i=0; i<3; i++) {
+                ShapeDrawable dAsteroid = new ShapeDrawable(new PathShape(pathAsteroid, 1, 1));
+                dAsteroid.getPaint().setColor(Color.WHITE);
+                dAsteroid.getPaint().setStyle(Paint.Style.STROKE);
+                dAsteroid.setIntrinsicWidth(50 - i * 14);
+                dAsteroid.setIntrinsicHeight(50 - i * 14);
+                drawableAsteroid[i] = dAsteroid;
+            }
             setBackgroundColor(Color.BLACK);
             Path pathNau = new Path();
             ShapeDrawable dNau = new ShapeDrawable(new PathShape(pathNau, 1, 1));
@@ -113,13 +119,16 @@ public class AsteroidsView extends View implements SensorEventListener {
             dMissile.setIntrinsicHeight(3);
             drawableMissile = dMissile;
         } else {
-            drawableAsteroid = context.getResources().getDrawable(R.drawable.asteroide1);
+            // Com hem canviat el drawableAsteroid i l'hem fet un array l'inicialitzem d'aquesta manera.
+            drawableAsteroid[0] = context.getResources().getDrawable(R.drawable.asteroide1);
+            drawableAsteroid[1] = context.getResources().getDrawable(R.drawable.asteroide2);
+            drawableAsteroid[2] = context.getResources().getDrawable(R.drawable.asteroide3);
             drawableShip = context.getResources().getDrawable(R.drawable.nave);
             drawableMissile = context.getResources().getDrawable(R.drawable.misil1); // Aquí declaram es DrawableMissile
         }
         asteroids = new ArrayList<AsteroidsGraphic>();
         for (int i = 0; i < numAsteroids; i++) {
-            AsteroidsGraphic asteroid = new AsteroidsGraphic(this, drawableAsteroid);
+            AsteroidsGraphic asteroid = new AsteroidsGraphic(this, drawableAsteroid[0]);
             asteroid.setIncY(Math.random() * 4 - 2);
             asteroid.setIncX(Math.random() * 4 - 2);
             asteroid.setRotAngle((int) (Math.random() * 360));
@@ -370,12 +379,31 @@ public class AsteroidsView extends View implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 
-    private void destroyAsteroid(int index) {
+    private void destroyAsteroid(int i) {
+        if (asteroids.get(i).getDrawable()!=drawableAsteroid[2]){
+            int size;
+            if (asteroids.get(i).getDrawable()==drawableAsteroid[1]){
+                size=2;
+            } else {
+
+                size=1;
+            }
+            for(int n=0;n<numFragments;n++){
+                AsteroidsGraphic asteroid = new AsteroidsGraphic(this,drawableAsteroid[size]);
+                asteroid.setCenX(asteroids.get(i).getCenX());
+                asteroid.setCenY(asteroids.get(i).getCenY());
+                asteroid.setIncX(Math.random()*7-2-size);
+                asteroid.setIncY(Math.random()*7-2-size);
+                asteroid.setRotAngle((int)(Math.random()*360));
+                asteroid.setRotSpeed((int)(Math.random()*8-4));
+                asteroids.add(asteroid);
+            }
+        }
         // Obtenim l'asteroide que es destruirà a partir del seu índex.
-        AsteroidsGraphic asteroid = asteroids.get(index);
+        AsteroidsGraphic asteroid = asteroids.get(i);
 
         // Eliminem l'asteroide de la llista d'asteroides actius.
-        asteroids.remove(index);
+        asteroids.remove(i);
 
         // Reproduim el so d'explosió (quan es destrueix):
         // - idExplosion: identificador del so d'explosió.

@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\steft\\source\\repos\\NorthWind\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{97F66E67-C99D-43D4-AB58-E932F6D5B9A7}|NorthWind.csproj|C:\\Users\\steft\\source\\repos\\NorthWind\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{97F66E67-C99D-43D4-AB58-E932F6D5B9A7}|NorthWind.csproj|solutionrelative:menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F66E67-C99D-43D4-AB58-E932F6D5B9A7}|NorthWind.csproj|c:\\users\\steft\\source\\repos\\northwind\\formreportcustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{97F66E67-C99D-43D4-AB58-E932F6D5B9A7}|NorthWind.csproj|solutionrelative:formreportcustomers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F66E67-C99D-43D4-AB58-E932F6D5B9A7}|NorthWind.csproj|c:\\users\\steft\\source\\repos\\northwind\\formreportpedidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{97F66E67-C99D-43D4-AB58-E932F6D5B9A7}|NorthWind.csproj|solutionrelative:formreportpedidos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97F66E67-C99D-43D4-AB58-E932F6D5B9A7}|NorthWind.csproj|C:\\Users\\steft\\source\\repos\\NorthWind\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97F66E67-C99D-43D4-AB58-E932F6D5B9A7}|NorthWind.csproj|solutionrelative:menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\steft\\source\\repos\\NorthWind\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\steft\\source\\repos\\NorthWind\\MenuPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MenuPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T15:41:12.316Z",
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\steft\\source\\repos\\NorthWind\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\steft\\source\\repos\\NorthWind\\MenuPrincipal.cs",
+              "RelativeToolTip": "MenuPrincipal.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA2wCoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T15:57:52.082Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormReportCustomers.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\steft\\source\\repos\\NorthWind\\FormReportCustomers.cs",
+              "RelativeDocumentMoniker": "FormReportCustomers.cs",
+              "ToolTip": "C:\\Users\\steft\\source\\repos\\NorthWind\\FormReportCustomers.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormReportCustomers.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T19:35:45.615Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormReportPedidos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\steft\\source\\repos\\NorthWind\\FormReportPedidos.cs",
+              "RelativeDocumentMoniker": "FormReportPedidos.cs",
+              "ToolTip": "C:\\Users\\steft\\source\\repos\\NorthWind\\FormReportPedidos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormReportPedidos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T19:35:44.054Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
