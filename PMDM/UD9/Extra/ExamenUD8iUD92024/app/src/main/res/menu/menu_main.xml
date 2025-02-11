@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/platja_son_bou"
+        android:title="Platja de Son Bou" />
+    <item
+        android:id="@+id/platja_punta_prima"
+        android:title="Platja de Punta Prima" />
+</menu>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PuntaPrima">
+
+    <TextView
+        android:id="@+id/txtPuntaPrimaDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Platja de Punta Prima està a sis quilòmetres de Sant Lluís (l’únic nucli urbà fundat pels francesos en el segle XVIII), situada entre les puntes des Marbres i Prima, així mateix a devora de la urbanització homònima i Torre de Son Ganxo. Des de la seva vorera s’entreveu s’Illot des Cagaire i s’illa de l’Aire. Aquesta platja resulta d’un entrant de mar ampli, obert i de roquissars de baixa altura, coronats per habitatges residencials que arriben fins a primera línia de la mar."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPuntaPrima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Punta Prima"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtPuntaPrimaDescripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
