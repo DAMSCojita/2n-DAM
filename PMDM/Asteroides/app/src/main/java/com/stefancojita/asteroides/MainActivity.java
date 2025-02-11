@@ -2,6 +2,7 @@ package com.stefancojita.asteroides;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -27,20 +28,22 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Declaració de variables necessàries.
+    // Declaració de variables.
     TextView txtTitol;
     Button buttonJugar;
     Button buttonConfigurar;
     Button buttonSobre;
     Button buttonPuntuacions;
     public static ScoreStorage scoreStorage = new ScoreStorageList();
-    MediaPlayer mp;
+    ReceptorBateria rb = new ReceptorBateria(); // Declaram aquí el receptor de la bateria.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        startService(new Intent(MainActivity.this, ServeiMusica.class)); // Iniciam el servei de música aquí.
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
         // Definim buttons.
         buttonJugar = findViewById(R.id.btnJugar);
         buttonJugar.setOnClickListener(new View.OnClickListener() {
@@ -94,13 +97,10 @@ public class MainActivity extends AppCompatActivity {
         Animation animacioQuart = AnimationUtils.loadAnimation(this, R.anim.animacioquartboto);
         buttonPuntuacions.startAnimation(animacioQuart);
 
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+        // Creem un IntentFilter i afegim l'acció ACTION_BATTERY_LOW.
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_LOW);
+        registerReceiver(rb, filter); // Registram el receptor de la bateria.
 
-        mp = MediaPlayer.create(this, R.raw.audio); // Afegim aquí el MediaPlayer que contindrà l'àudio de fons.
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -128,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
         // Cridam a la superclase
         super.onSaveInstanceState(savedInstanceState);
         // Comprovem si el reproductor d'àudio (mp) no és nul
-        if (mp != null) {
-            int pos = mp.getCurrentPosition();
+        if (ServeiMusica.reproductor != null) {
+            int pos = ServeiMusica.reproductor.getCurrentPosition();
             savedInstanceState.putInt("audio_position", pos); // Guardem la posició
         }
     }
@@ -141,12 +141,13 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState.containsKey("audio_position")) {
             int pos = savedInstanceState.getInt("audio_position");
             // Comprovem si el reproductor d'àudio (mp) no és nul
-            if (mp != null) {
-                mp.seekTo(pos); // Seguir reproduïnt des de la posició pos
+            if (ServeiMusica.reproductor != null) {
+                ServeiMusica.reproductor.seekTo(pos); // Seguir reproduïnt des de la posició pos
             }
         }
     }
 
+    // Intents per a arrancar les diferents activitats.
     public void arrancarActivityJugar(View view) {
         Intent i = new Intent(this, GameActivity.class);
         startActivity(i);
@@ -162,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    // Intent per mostrar les puntuacions.
     public void showScores(View view) {
         Intent i = new Intent(this, Scores.class);
         startActivity(i);
@@ -171,19 +173,38 @@ public class MainActivity extends AppCompatActivity {
 //        finish();
 //    }
 
+    // Cicles de vida.
     @Override
     protected void onPause() {
+        // Pausem la música si està sonant.
+        if (ServeiMusica.reproductor != null) {
+            ServeiMusica.reproductor.pause();
+        }
         super.onPause();
-        mp.pause(); // Pausam sa música quan entrem al 'onPause()'.
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this); // Declaram es SharedPreferences.
+        // Comprovem si la música està habilitada a les preferències.
         if (pref.getBoolean("musica", true)) {
-            mp.start(); // Retornam sa música quan entrem al 'onResume()'.
+            // Iniciem el servei de música si està habilitat
+            startService(new Intent(MainActivity.this, ServeiMusica.class));
+            if (ServeiMusica.reproductor != null) {
+                ServeiMusica.reproductor.start();
+            }
+        } else {
+            // Aturem el servei de música si no està habilitat.
+            stopService(new Intent(MainActivity.this, ServeiMusica.class));
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Aturem el servei de música quan l'activitat es destrueix-
+        stopService(new Intent(MainActivity.this, ServeiMusica.class));
     }
 
 }

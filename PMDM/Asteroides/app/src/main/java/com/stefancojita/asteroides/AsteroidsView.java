@@ -57,24 +57,29 @@ public class AsteroidsView extends View implements SensorEventListener {
     float mX;
     float mY;
 
+    /////// SENSORS //////
     SensorManager mSensorManager;
     Sensor accelerometerSensor;
 
-    private SharedPreferences pref;
+    private SharedPreferences pref; // Declaram es SharedPreferences per poder aaccedir a elles.
 
+    /////// SOROLL //////
     SoundPool soundPool;
+
     int idFire, idExplosion;
 
-    private Drawable drawableAsteroid[]= new Drawable[3]; // Afegim es nou drawableAsteroid.
+    private Drawable drawableAsteroid[]= new Drawable[3]; // Reemplaçem el antic drawableAsteroid per un nou array.
 
     public AsteroidsView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        // Definim variables al constructor.
         Drawable drawableShip;
-        pref = PreferenceManager.getDefaultSharedPreferences(getContext());
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        pref = PreferenceManager.getDefaultSharedPreferences(getContext()); // Molt important definir el pref en el constructor.
         soundPool = new SoundPool( 10, AudioManager.STREAM_MUSIC , 0);
         idFire = soundPool.load(context, R.raw.dispar, 0);
         idExplosion = soundPool.load(context, R.raw.explosio, 0);
+        numFragments = Integer.parseInt(pref.getString("fragments", "3")); // Definim el num de fragments per poder dividr el asteroide, accedim a ell amb la variable pref.
+        // Gestió de gràfics a Prefèrencies.
         if (pref.getString("grafics", "1").equals("0")) {
             setLayerType(View.LAYER_TYPE_SOFTWARE, null);
             Path pathAsteroid = new Path();
@@ -119,10 +124,11 @@ public class AsteroidsView extends View implements SensorEventListener {
             dMissile.setIntrinsicHeight(3);
             drawableMissile = dMissile;
         } else {
-            // Com hem canviat el drawableAsteroid i l'hem fet un array l'inicialitzem d'aquesta manera.
+            // Com hem canviat el drawableAsteroid i l'hem fet un array inicialitzam cada posició per defecte.
             drawableAsteroid[0] = context.getResources().getDrawable(R.drawable.asteroide1);
             drawableAsteroid[1] = context.getResources().getDrawable(R.drawable.asteroide2);
             drawableAsteroid[2] = context.getResources().getDrawable(R.drawable.asteroide3);
+            // Inicialitzem la nau i el missil.
             drawableShip = context.getResources().getDrawable(R.drawable.nave);
             drawableMissile = context.getResources().getDrawable(R.drawable.misil1); // Aquí declaram es DrawableMissile
         }
@@ -195,10 +201,12 @@ public class AsteroidsView extends View implements SensorEventListener {
         super.onDraw(canvas);
         ship.drawGraphic(canvas);
 
+        // Dibuixam asteroides fent un bucle i recorrent el seu array.
         for (AsteroidsGraphic asteroid : asteroids) {
             asteroid.drawGraphic(canvas);
         }
 
+        // Dibuixam missils fent un bucle i recorrent el seu array.
         for (AsteroidsGraphic missile : missiles) {
             missile.drawGraphic(canvas);
         }
@@ -376,31 +384,27 @@ public class AsteroidsView extends View implements SensorEventListener {
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-    }
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 
     private void destroyAsteroid(int i) {
-        if (asteroids.get(i).getDrawable()!=drawableAsteroid[2]){
+        if (asteroids.get(i).getDrawable() != drawableAsteroid[2]){
             int size;
-            if (asteroids.get(i).getDrawable()==drawableAsteroid[1]){
-                size=2;
+            if (asteroids.get(i).getDrawable() == drawableAsteroid[1]){
+                size = 2;
             } else {
-
-                size=1;
+                size = 1;
             }
-            for(int n=0;n<numFragments;n++){
+            for(int n = 0; n < numFragments;n++){
                 AsteroidsGraphic asteroid = new AsteroidsGraphic(this,drawableAsteroid[size]);
                 asteroid.setCenX(asteroids.get(i).getCenX());
                 asteroid.setCenY(asteroids.get(i).getCenY());
-                asteroid.setIncX(Math.random()*7-2-size);
-                asteroid.setIncY(Math.random()*7-2-size);
-                asteroid.setRotAngle((int)(Math.random()*360));
-                asteroid.setRotSpeed((int)(Math.random()*8-4));
+                asteroid.setIncX(Math.random() * 4 - 2);
+                asteroid.setIncY(Math.random() * 4 - 2);
+                asteroid.setRotAngle((int)(Math.random() * 360));
+                asteroid.setRotSpeed((int)(Math.random() * 8 - 4));
                 asteroids.add(asteroid);
             }
         }
-        // Obtenim l'asteroide que es destruirà a partir del seu índex.
-        AsteroidsGraphic asteroid = asteroids.get(i);
 
         // Eliminem l'asteroide de la llista d'asteroides actius.
         asteroids.remove(i);
