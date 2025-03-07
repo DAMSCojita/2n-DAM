@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.referencedLibraries": [
+        "d:\\CFGS_DAM\\AD\\Librerias\\javax.persistence-api-2.2.jar",
+        "d:\\CFGS_DAM\\AD\\Librerias\\mysql-connector-j-9.2.0\\mysql-connector-j-9.2.0.jar"
+    ]
+}

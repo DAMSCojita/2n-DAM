@@ -30,4 +30,22 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+    <string-array name="tipusGuardat">
+        <item>Array</item>
+        <item>Preferencies</item>
+        <item>Fitxer en memoria interna</item>
+        <item>Fitxer en memoria externa</item>
+        <item>Fitxer en memoria de aplicacio</item>
+        <item>Emmagatzemar en base de dades</item>
+        <item>Emmagatzemar en un protocol basat en sockets</item>
+    </string-array>
+    <string-array name="tipusGuardatValors">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
 </resources>

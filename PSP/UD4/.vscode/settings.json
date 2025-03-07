@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.referencedLibraries": [
+        "d:\\CFGS_DAM\\PSP\\Librerias\\commons-email-1.6.0.jar",
+        "d:\\CFGS_DAM\\PSP\\Librerias\\commons-net-3.11.1\\commons-net-3.11.1.jar"
+    ]
+}

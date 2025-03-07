@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">AppMultiusos_10_11</string>
+    <string-array name="storage_options">
+        <item>Array</item>
+        <item>Preferències</item>
+        <item>Memoria Interna</item>
+        <item>Memoria Externa</item>
+        <item>ApplicationFile</item>
+        <item>SQLite</item>
+        <item>En Servidor</item>
+    </string-array>
+
+    <string-array name="storage_values">
+        <item>array</item>
+        <item>shared_prefs</item>
+        <item>memoria_interna</item>
+        <item>memoria_externa</item>
+        <item>application_file</item>
+        <item>sqlite</item>
+        <item>en_servidor</item>
+    </string-array>
+
+    //PARA EL SPINNER
+    <string-array name="opciones_array">
+            <item>Mahón</item>
+            <item>Sant Lluís</item>
+            <item>Es Castell</item>
+    </string-array>
+</resources>

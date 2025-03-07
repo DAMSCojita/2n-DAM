@@ -10,8 +10,7 @@ public class PreferencesActivity extends PreferenceActivity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
-        final EditTextPreference fragments =
-                (EditTextPreference)findPreference("fragments");
+        final EditTextPreference fragments = (EditTextPreference)findPreference("fragments");
         fragments.setOnPreferenceChangeListener(
                 new Preference.OnPreferenceChangeListener() {
                     @Override

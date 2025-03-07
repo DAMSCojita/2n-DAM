@@ -24,6 +24,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonConfigurar;
     Button buttonSobre;
     Button buttonPuntuacions;
-    public static ScoreStorage scoreStorage = new ScoreStorageList();
+    public static ScoreStorage scoreStorage;
     ReceptorBateria rb = new ReceptorBateria(); // Declaram aquí el receptor de la bateria.
 
     @Override
@@ -101,6 +103,43 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_LOW);
         registerReceiver(rb, filter); // Registram el receptor de la bateria.
 
+        // Inicialitzem scoreStorage segons el valor de les preferències.
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this); // Declaram es SharedPreferences.
+        int tipusGuardat = Integer.parseInt(pref.getString("guardar", "0")); // Obtenim el tipus de guardat en una nova variable.
+        switch (tipusGuardat) {
+            // Cas que escollim "Arrays".
+            case 0:
+                scoreStorage = new ScoreStorageList();
+                break;
+            // Cas que escollim "Preferències".
+            case 1:
+                scoreStorage = new ScoreStoragePreferences(this);
+                break;
+            // Cas que escollim "Fitxer en memòria interna".
+            case 2:
+                scoreStorage = new ScoreStorageInternalFile(this);
+                break;
+            // Cas que escollim "Fitxer en memòria externa".
+            case 3:
+                scoreStorage = new ScoreStorageExternalFile(this);
+                break;
+            // Cas que escollim "Fitxer en memòria de aplicació".
+            case 4:
+                scoreStorage = new ScoreStorageApplicationFile(this);
+                break;
+            // Cas que escollim "Emmagatzamatge en base de dades".
+            case 5:
+                scoreStorage = new ScoreStorageSQLite(this);
+                break;
+            // Cas que escollim "Emmagatzemar en un protocol basat en sockets"
+            case 6:
+                scoreStorage = new ScoreStorageSocket(this);
+                break;
+            // Cas default.
+            default:
+                scoreStorage = new ScoreStorageList();
+                break;
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -110,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id==R.id.preferences) {
+        if (id == R.id.preferences) {
             // arrancar activitat preferències
             arrancarActivityPreferences(null);
             return true;
@@ -140,17 +179,29 @@ public class MainActivity extends AppCompatActivity {
         // Comprovem si l'estat de l'instància conté la clau "audio_position".
         if (savedInstanceState.containsKey("audio_position")) {
             int pos = savedInstanceState.getInt("audio_position");
-            // Comprovem si el reproductor d'àudio (mp) no és nul
+            // Comprovem si el reproductor d'àudio (mp) no és null
             if (ServeiMusica.reproductor != null) {
                 ServeiMusica.reproductor.seekTo(pos); // Seguir reproduïnt des de la posició pos
             }
         }
     }
 
-    // Intents per a arrancar les diferents activitats.
     public void arrancarActivityJugar(View view) {
         Intent i = new Intent(this, GameActivity.class);
-        startActivity(i);
+        startActivityForResult(i, 1234);
+    }
+
+    @Override
+    protected void onActivityResult (int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        // Comprovam si el requestCode és 1234 i el resultCode és RESULT_OK.
+        if (requestCode == 1234 && resultCode == RESULT_OK && data != null) {
+            int score = data.getExtras().getInt("score"); // Obtenim la puntuació.
+            String name = "Stefan Cojita"; // Afegim una variable per el nostre nom.
+            // Millor llegir el nom des d’un AlertDialog.Builder o de preferències.
+            scoreStorage.storeScore(score, name, System.currentTimeMillis());
+            showScores(null);
+        }
     }
 
     public void arrancarActivitySobre(View view) {
@@ -203,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Aturem el servei de música quan l'activitat es destrueix-
+        // Aturem el servei de música quan l'activitat es destrueix.
         stopService(new Intent(MainActivity.this, ServeiMusica.class));
     }
 

@@ -25,6 +25,12 @@
         android:summary="Escollir el sensor per jugar"
         android:entries="@array/tipusControls"
         android:entryValues="@array/tipusControlsValors"/>
+    <ListPreference
+        android:key="guardar"
+        android:title="Tipus d'emmagatzematge"
+        android:summary="Escollir on es guarden les puntuacions"
+        android:entries="@array/tipusGuardat"
+        android:entryValues="@array/tipusGuardatValors"/>
     <PreferenceCategory android:title="Mode multijugador">
         <CheckBoxPreference
             android:title="Activar multijugador"/>

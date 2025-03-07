@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipusEmmagatzematge">
+        <item>Array</item>
+        <item>Fitxer de preferències</item>
+        <item>Memòria Interna</item>
+        <item>Memòria Externa</item>
+        <item>Fitxer de aplicació</item>
+        <item>Base de dades SQLite</item>
+        <item>En Servidor (Sockets)</item>
+    </string-array>
+    <string-array name="tipusEmmagatzematgeValors">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="spinner_array">
+        <item>Mahón</item>
+        <item>Sant Lluís</item>
+        <item>Es Castell</item>
+        <item>Es Mercadal</item>
+        <item>Ferreries</item>
+        <item>Alaior</item>
+    </string-array>
+</resources>

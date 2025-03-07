@@ -12,11 +12,10 @@ public class ScoreStorageList implements ScoreStorage{
         scores.add("011000 Paco Pérez");
     }
     @Override
-    public void storeScore(int score,
-                           String name, long date) {
+    public void storeScore(int score, String name, long date) {
         scores.add(0, score + " "+ name);
-
     }
+
     @Override
     public List<String> getScoreList(int maxNo) {
         return scores;

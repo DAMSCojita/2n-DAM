@@ -1,6 +1,8 @@
 package com.stefancojita.asteroides;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,6 +18,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
@@ -69,6 +72,8 @@ public class AsteroidsView extends View implements SensorEventListener {
     int idFire, idExplosion;
 
     private Drawable drawableAsteroid[]= new Drawable[3]; // Reemplaçem el antic drawableAsteroid per un nou array.
+
+    private int score = 0; // Declaram la nova variable per la puntuació.
 
     public AsteroidsView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -254,6 +259,14 @@ public class AsteroidsView extends View implements SensorEventListener {
                 }
             }
         }
+
+        // Comprovam col·lisions amb els asteroides.
+        for (AsteroidsGraphic asteroid : asteroids) {
+            // Si hi ha col·lisió amb l'asteroide, finalitzam el joc.
+            if (asteroid.checkCollision(ship)) {
+                terminate();
+            }
+        }
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -387,6 +400,12 @@ public class AsteroidsView extends View implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 
     private void destroyAsteroid(int i) {
+
+        // Comprovam si no queden asteroides.
+        if (asteroids.isEmpty()) {
+            terminate();
+        }
+
         if (asteroids.get(i).getDrawable() != drawableAsteroid[2]){
             int size;
             if (asteroids.get(i).getDrawable() == drawableAsteroid[1]){
@@ -408,6 +427,8 @@ public class AsteroidsView extends View implements SensorEventListener {
 
         // Eliminem l'asteroide de la llista d'asteroides actius.
         asteroids.remove(i);
+
+        score += 1000; // Cada cop que es destrueixi un asteroide se incrementa la variable per la puntuació.
 
         // Reproduim el so d'explosió (quan es destrueix):
         // - idExplosion: identificador del so d'explosió.
@@ -439,6 +460,22 @@ public class AsteroidsView extends View implements SensorEventListener {
 
     public GameThread getThread() {
         return thread;
+    }
+
+    private Activity parent; // Afegim la variable per l'activitat pare.
+
+    // Mètode per a accedir a la puntuació.
+    public void setParent(Activity parent) {
+        this.parent = parent;
+    }
+
+    private void terminate() {
+        Bundle bundle = new Bundle(); // Creem un nou Bundle per a la puntuació.
+        bundle.putInt("score", score); // Afegim la puntuació al Bundle.
+        Intent intent = new Intent();
+        intent.putExtras(bundle); // Afegim el Bundle a l'Intent.
+        parent.setResult(Activity.RESULT_OK, intent); // Establim el resultat de l'activitat pare.
+        parent.finish();
     }
 
 

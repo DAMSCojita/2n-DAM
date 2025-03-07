@@ -1,0 +1,9 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="storage_type"
+        android:title="Tipo de almacenamiento"
+        android:dialogTitle="Selecciona almacenamiento"
+        android:entries="@array/storage_options"
+        android:entryValues="@array/storage_values"
+        android:defaultValue="array"/>
+</PreferenceScreen>
